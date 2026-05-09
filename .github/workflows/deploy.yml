@@ -1,0 +1,24 @@
+name: Deploy to Sakura Internet
+
+on:
+  push:
+    branches:
+      - main  # または master
+
+jobs:
+  web-deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get latest code
+      uses: actions/checkout@v4
+
+    - name: Sync files via FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        # port: 21 
+        # さくらのレンタルサーバで特定のフォルダ（例：/www/test-site/）にアップロードしたい場合は、以下のコメントアウトを外して設定します。
+        # server-dir: /www/test-site/

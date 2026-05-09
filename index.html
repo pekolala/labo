@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>実験用サイト | CMS & Form Testing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="glass-header">
+        <div class="logo">Labo<span>.</span></div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#news">News (CMS)</a></li>
+                <li><a href="#contact">Contact (Form)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about" class="hero-section">
+            <div class="hero-content">
+                <h1>Explore the <span>Possibilities</span></h1>
+                <p>フォーム、お知らせ、CMSなどの技術検証を行うための実験用サイトです。</p>
+            </div>
+            <div class="gradient-sphere"></div>
+        </section>
+
+        <section id="news" class="news-section">
+            <h2 class="section-title">Latest News <span>(microCMS / WP Test)</span></h2>
+            <div class="news-grid" id="news-container">
+                <!-- JSで動的に追加（ローディング中はスケルトンを表示） -->
+                <div class="news-card skeleton"></div>
+                <div class="news-card skeleton"></div>
+                <div class="news-card skeleton"></div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2 class="section-title">Contact <span>(Formspree Test)</span></h2>
+            <div class="form-wrapper glass-panel">
+                <!-- Action URLは後で実際のものに変更します -->
+                <form id="test-form" action="https://formspree.io/f/your_form_id" method="POST">
+                    <div class="input-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="山田 太郎">
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="example@email.com">
+                    </div>
+                    <div class="input-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="お問い合わせ内容..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">送信する</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Labo Experimental Site.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
