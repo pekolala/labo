@@ -21,3 +21,5 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./labo/
         server-dir: www/labo/
+        security: loose
+        log-level: verbose
