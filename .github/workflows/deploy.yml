@@ -19,6 +19,5 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        # port: 21 
-        # さくらのレンタルサーバで特定のフォルダ（例：/www/test-site/）にアップロードしたい場合は、以下のコメントアウトを外して設定します。
-        # server-dir: /www/test-site/
+        local-dir: ./labo/
+        server-dir: /www/labo/
